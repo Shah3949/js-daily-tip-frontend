@@ -41,7 +41,7 @@ export default function SubscribeForm({ onClose }) {
     };
   
     try {
-      const response = await fetch('https://js-daily-tip-backend.onrender.com/api/subscribers/subscribe', {
+      const response = await fetch('https://js-daily-tip-backend.onrender.com/api/subscribers', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
