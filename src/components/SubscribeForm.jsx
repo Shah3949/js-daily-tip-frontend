@@ -117,14 +117,14 @@ export default function SubscribeForm({ onClose }) {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 bg-white text-black border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
               placeholder="Enter your full name"
               required
             />
           </div>
 
           <div className="mb-5">
-            <label htmlFor="email" className="flex items-center text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="email" className="flex items-center bg-white text-sm font-medium text-gray-700 mb-2">
               <Mail size={18} className="mr-2 text-blue-500" />
               <span>Email Address</span>
             </label>
@@ -134,14 +134,14 @@ export default function SubscribeForm({ onClose }) {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 bg-white text-black border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
               placeholder="you@example.com"
               required
             />
           </div>
 
           <div className="mb-6">
-            <label htmlFor="tips" className="flex items-center text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="tips" className="flex items-center bg-white text-sm font-medium text-gray-700 mb-2">
               <ListOrdered size={18} className="mr-2 text-blue-500" />
               <span>Preferred number of tips</span>
             </label>
@@ -151,10 +151,10 @@ export default function SubscribeForm({ onClose }) {
                 name="tips"
                 value={formData.tips}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none transition-all"
+                className={`w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none transition-all ${formData.tips === "" ? "text-gray-500" : "text-black"}`}
                 required
               >
-                <option value="">Select tip per day</option>
+                <option value="" selected className="text-gray-500">Select tip per day</option>
                 <option key='1' value='1'>1</option>
                 <option key='2' value='2'>2</option>
                 <option key='3' value='3'>3</option>
@@ -177,7 +177,7 @@ export default function SubscribeForm({ onClose }) {
                 name="time"
                 value={formData.time}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none transition-all"
+                className={`w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none transition-all ${formData.time === "" ? "text-gray-500" : "text-black"}`}
                 required
               >
                 <option value="">Select a time (IST)</option>
@@ -187,7 +187,7 @@ export default function SubscribeForm({ onClose }) {
                   </option>
                 ))}
               </select>
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2             text-gray-700">
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <Calendar size={18} className="text-blue-500" />
               </div>
             </div>
